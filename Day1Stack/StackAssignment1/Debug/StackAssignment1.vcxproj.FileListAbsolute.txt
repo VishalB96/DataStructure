@@ -1,2 +1,0 @@
-E:\VITA CDAC OOP\DATA STRUCTURE\DS_Repo\DataStructure\Day1Stack\StackAssignment1\Debug\StackAssignment1.exe
-E:\VITA CDAC OOP\DATA STRUCTURE\DS_Repo\DataStructure\Day1Stack\StackAssignment1\Debug\StackAssignment1.pdb
