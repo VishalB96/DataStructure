@@ -28,3 +28,10 @@ Day1Stack/.vs/Day1Stack/v16/.suo
 .vs/DataStructure/v16/.suo
 *.config
 Day1Stack/StackAssignment1/.vs/StackAssignment1/v16/.suo
+*.db-shm
+*.db-wal
+*.opendb
+Day3LinearLinkedList&applications/LinearLinlkedList/.vs/LinearLinlkedList/v16/.suo
+Day3LinearLinkedList&applications/LinkedListMerg/.vs/LinkedListMerg/v16/.suo
+Day3LinearLinkedList&applications/StackUsingLinkedList/.vs/StackUsingLinkedList/v16/.suo
+Day3LinearLinkedList&applications/QueueUsingLinkedList/.vs/QueueUsingLinkedList/v16/.suo
