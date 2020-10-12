@@ -67,7 +67,7 @@ void PrintQueue() {
 int main()
 {
    
-    cout << "num" << n;
+   // cout << "num" << n;
     int size,ch;
     cout << "Enter the size : ";
     cin >> size;

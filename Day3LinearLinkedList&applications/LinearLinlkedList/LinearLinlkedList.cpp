@@ -68,7 +68,11 @@ public:
         struct node* t, * t2;
         if(root==NULL)
             cout << "Linked List Empty" << endl;
-        else {
+        else if (root->next == NULL) {
+            delete root;
+            initLinkedList();
+        }else
+        {
             t = t2 = root;
             while (t->next != NULL) {
                 t2 = t;
@@ -150,7 +154,7 @@ int main()
     int ch,e;
     LinkedList l1;
     do {
-        cout << "Enter Your Choice :\n1.Insert left\n2.Insert right\n3.delete left\n4.delete right\n5.delete element\n.6search element\n7.print linked list\n8.exit" << endl;
+        cout << "Enter Your Choice :\n1.Insert left\n2.Insert right\n3.delete left\n4.delete right\n5.delete element\n6.search element\n7.print linked list\n8.exit" << endl;
         cin >> ch;
         switch (ch) {
         case 1:

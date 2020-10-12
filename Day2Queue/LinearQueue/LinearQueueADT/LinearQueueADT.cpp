@@ -5,65 +5,77 @@
 using namespace std;
 int Q[100], MaxSize, front, rear;
 
-void initQueue(int size) {
-    MaxSize = size;
-    front = 0;
-    rear = -1;
-}
+class LinearQueue {
+public:
+    int Q[100], MaxSize, front, rear;
 
-bool isFull() {
-    if (rear == MaxSize-1)
-        return true;
-    else
-        return false;
-}
-
-bool isEmpty() {
-    if (front > rear)
-        return true;
-    else
-        return false;
-}
-
-void EnQueue(int e) {
-    if (isFull())
-        cout << "Queue is full"<<endl;
-    else
-        Q[++rear] = e;
-}
-
-int DeQueue() {
-    if (isEmpty()) {
-        cout << "Queue is Empty"<<endl;
-        return 0;
-    } 
-    else
-    {
-        int temp = Q[front++];
-        return temp;
+    LinearQueue(int size) {
+        initQueue(size);
     }
-}
+    void initQueue(int size) {
+        MaxSize = size;
+        front = 0;
+        rear = -1;
+    }
 
-void PrintQueue() {
-    if (isEmpty())
-        cout << "Queue is empty"<<endl;
-    else {
-        for (int i = front; i <= rear; i++) {
-            cout << Q[i] << " ";
+    bool isFull() {
+        if (rear == MaxSize - 1)
+            return true;
+        else
+            return false;
+    }
+
+    bool isEmpty() {
+        if (front > rear)
+            return true;
+        else
+            return false;
+    }
+
+    void EnQueue(int e) {
+        if (isFull())
+            cout << "Queue is full" << endl;
+        else
+            Q[++rear] = e;
+    }
+
+    int DeQueue() {
+        if (isEmpty()) {
+            cout << "Queue is Empty" << endl;
+            return 0;
+        }
+        else
+        {
+            int temp = Q[front];
+            front++;
+            if (isEmpty())
+                initQueue(MaxSize);
+            return temp;
         }
     }
-}
 
-void resetQueue(int size) {
-    initQueue(size);
-}
+    void PrintQueue() {
+        if (isEmpty())
+            cout << "Queue is empty" << endl;
+        else {
+            for (int i = front; i <= rear; i++) {
+                cout << Q[i] << " ";
+            }
+        }
+    }
+
+    void resetQueue(int size) {
+        initQueue(size);
+    }
+};
+
 
 int main()
 {
     int size;
     cout << "Enter the size ";
     cin >> size;
-    initQueue(size);
+    LinearQueue lq(size);
     int ch;
     do {
         cout << endl;
@@ -72,23 +84,23 @@ int main()
         cout << endl;
         switch (ch) {
         case 1:
-            if (isFull()) 
+            if (lq.isFull()) 
                 cout << "Queue is full"<<endl;
                 
             else {
                 int t;
                 cout << "Enter the element : ";
                 cin >> t;
-                EnQueue(t);
+                lq.EnQueue(t);
             }
             break;
             
         case 2:
-            cout << DeQueue() << endl;
+            cout << lq.DeQueue() << endl;
             break;
 
         case 3:
-            PrintQueue();
+            lq.PrintQueue();
             break;
 
         case 4:

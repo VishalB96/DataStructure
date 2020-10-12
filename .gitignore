@@ -35,3 +35,7 @@ Day3LinearLinkedList&applications/LinearLinlkedList/.vs/LinearLinlkedList/v16/.s
 Day3LinearLinkedList&applications/LinkedListMerg/.vs/LinkedListMerg/v16/.suo
 Day3LinearLinkedList&applications/StackUsingLinkedList/.vs/StackUsingLinkedList/v16/.suo
 Day3LinearLinkedList&applications/QueueUsingLinkedList/.vs/QueueUsingLinkedList/v16/.suo
+Day4Circular&DoublyLinkedList/CircularLinkedListADT/.vs/CircularLinkedListADT/v16/.suo
+*.enc
+Day4Circular&DoublyLinkedList/DoublyLinkedListADT/.vs/DoublyLinkedListADT/v16/.suo
+Day5TreeBinary/BinaryTree/.vs/BinaryTree/v16/.suo
