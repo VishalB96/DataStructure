@@ -10,6 +10,7 @@ struct node {
 class BSTdll {
 public:
     node* root,*n;
+    int count = 0;
 
     BSTdll() {
         createLL();
@@ -73,12 +74,13 @@ public:
         }
     }
 
-    int count(node* r, int c) {
+    void countNodes(node* r) {
+        
         if (r != NULL) {
-            count(r->left, c);
-            c++;
-            count(r->right,c);
-            return c;
+            countNodes(r->left);
+            count++;
+            countNodes(r->right);
+            
         }
     }
 
@@ -96,14 +98,16 @@ int main()
     b1.insert(b1.getRoot(), b1.createNode(278));
     b1.insert(b1.getRoot(), b1.createNode(29));
     b1.insert(b1.getRoot(), b1.createNode(21));
-    b1.insert(b1.getRoot(), b1.createNode(90));
+    //b1.insert(b1.getRoot(), b1.createNode(90));
     cout <<"inorder" << endl;
     b1.inorder(b1.getRoot());
     cout << endl <<"Preorder"<< endl;
     b1.preorder(b1.getRoot());
     cout << endl << "Postorder" << endl;
     b1.postorder(b1.getRoot());
-    cout << endl << b1.count(b1.getRoot(), 0);
+    b1.countNodes(b1.getRoot());
+    cout << endl << b1.count;
+   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
