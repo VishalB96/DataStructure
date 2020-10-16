@@ -57,17 +57,16 @@ public:
         cout << endl;
     }
 
-    double bin2dec(node* r, int i) {
-        double sum=0;
+    int bin2dec(node* r, int i) {
+        int sum=0;
+        i--;
         if (r->next == NULL) {
-            sum = sum+ r->data * pow(2, i);
+            sum = sum+ (r->data * (int)pow(2,i));
             return sum;
         }
-        else {
-            bin2dec(r->next, --i);
-            sum = sum + bin2dec(r->next, --i);
+            sum = (r->data * (int)pow(2, i))+ bin2dec(r->next, i);
             return sum;
-        }
+        
     }
 
    
@@ -78,12 +77,23 @@ public:
 int main()
 {
     LinkedList l;
-    l.insertRight(1);
-    l.insertRight(0);
-    l.insertRight(1);
-    l.insertRight(0);
+    string bin;
+    cout << "Enter the binery no : ";
+    cin >> bin;
+    for (int i = 0; i < bin.size();i++) {
+        int c = bin.at(i)-'0';
+        if (c == 0 || c == 1) {
+            l.insertRight(c);
+            
+        }
+        else {
+            cout << "Enter Binery" << endl;
+        }
+    }
+
     l.printLinlkedList();
-    cout<<l.bin2dec(l.getRoot(), 3)<<endl;
+    cout << "Binary to Decimal is : "<< l.bin2dec(l.getRoot(), bin.size());
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
